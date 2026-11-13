@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b0e">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Thought-provoking digital books from The Curious Mind.">
+  <meta property="og:title" content="THE CURIOUS MIND — Discover More. Think Differently.">
+  <meta property="og:description" content="Thought-provoking digital books from The Curious Mind.">
+  <meta property="og:type" content="website">
+  <title>THE CURIOUS MIND — Discover More. Think Differently.</title>
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0b0e'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23c9a45c' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%232f6bff'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <div class="announcement"><span>A growing library for endlessly curious people</span></div>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="THE CURIOUS MIND — home">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span class="brand-name">THE CURIOUS MIND</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#books">Books</a>
+        <a href="#about">Our Story</a>
+        <a href="#footer">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="searchJump" type="button" aria-label="Search the collection">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        </button>
+        <button class="cart-btn" id="openCart" type="button" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+          <span class="cart-label">Cart</span>
+          <b id="cartCount" aria-live="polite" aria-label="Items in cart">0</b>
+        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"><i class="hero-glow"></i><i class="hero-grid"></i></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow reveal"><i></i> FOR THE CURIOUS MINDS</div>
+          <h1 class="reveal" style="--d:.08s">Discover more.<br><em>Think differently.</em></h1>
+          <p class="hero-lede reveal" style="--d:.16s">Thought-provoking reads, fascinating discoveries and ideas that make you look at the world a little differently.</p>
+          <div class="hero-actions reveal" style="--d:.24s">
+            <a class="btn btn-primary" href="#books"><span>Explore the books</span><i class="arrow">↗</i></a>
+            <a class="link-arrow" href="#about">Get to know us <i>→</i></a>
+          </div>
+          <div class="hero-caption reveal" style="--d:.32s"><i></i> Digital reads. Fresh perspectives. Endless curiosity.</div>
+        </div>
+
+        <div class="hero-stage" id="heroStage" aria-label="The collection">
+          <i class="stage-ring ring-a" aria-hidden="true"></i>
+          <i class="stage-ring ring-b" aria-hidden="true"></i>
+          <div class="stage-books" id="heroBooks"></div>
+          <span class="stage-note" id="stageNote"></span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#books"><span>SCROLL TO EXPLORE</span><i></i></a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Discover more</span><i>✦</i><span>Think differently</span><i>✦</i><span>Curiosity first</span><i>✦</i><span>Fresh perspectives</span><i>✦</i><span>Read at your pace</span><i>✦</i>
+        <span>Discover more</span><i>✦</i><span>Think differently</span><i>✦</i><span>Curiosity first</span><i>✦</i><span>Fresh perspectives</span><i>✦</i><span>Read at your pace</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <section class="values" aria-label="What we believe">
+      <div class="values-inner">
+        <div class="value reveal"><b>01</b><strong>Curiosity first.</strong><span>Knowledge that stays with you.</span></div>
+        <div class="value reveal" style="--d:.08s"><b>02</b><strong>Fresh perspectives.</strong><span>Ideas beyond the obvious.</span></div>
+        <div class="value reveal" style="--d:.16s"><b>03</b><strong>Read at your pace.</strong><span>Digital books, ready when you are.</span></div>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section class="section collection" id="books">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <div class="eyebrow reveal"><i></i> THE COLLECTION</div>
+            <h2 class="reveal" style="--d:.06s">Books for the <em>curious.</em></h2>
+            <p class="section-sub reveal" style="--d:.12s">Explore ideas that spark questions and reward curiosity.</p>
+          </div>
+          <div class="collection-count reveal" style="--d:.18s">OUR FIRST COLLECTION <b id="collectionCount">02 BOOKS</b></div>
+        </header>
+
+        <div class="toolbar reveal">
+          <div class="filters" id="filters" role="group" aria-label="Filter books by category">
+            <button class="filter active" type="button" data-filter="all" aria-pressed="true">All books <sup data-count="all">02</sup></button>
+            <button class="filter" type="button" data-filter="science" aria-pressed="false">Science &amp; body <sup data-count="science">01</sup></button>
+            <button class="filter" type="button" data-filter="psychology" aria-pressed="false">Psychology <sup data-count="psychology">01</sup></button>
+          </div>
+          <label class="search">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+            <input id="searchInput" type="search" placeholder="Search books…" autocomplete="off" aria-label="Search books">
+          </label>
+        </div>
+        <p class="result-line" id="resultLine" aria-live="polite"></p>
+
+        <div class="book-grid" id="bookGrid"></div>
+        <p class="no-results" id="noResults" hidden>No books match your search. Try another title.</p>
+        <noscript><p class="no-results">Please enable JavaScript to browse the collection.</p></noscript>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto" id="about">
+      <div class="manifesto-bg" aria-hidden="true"></div>
+      <div class="container manifesto-inner">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <div class="eyebrow reveal"><i></i> WHY WE EXIST</div>
+        <h2 class="reveal" style="--d:.06s">The world is full of things<br>you haven't <em>noticed yet.</em></h2>
+        <p class="reveal" style="--d:.12s">We create accessible digital reads around fascinating questions, overlooked details and ideas worth thinking about. Because curiosity can turn an ordinary moment into a discovery.</p>
+        <a class="link-arrow reveal" style="--d:.18s" href="#books">Find your next discovery <i>→</i></a>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing">
+      <div class="container closing-inner">
+        <div>
+          <div class="eyebrow reveal"><i></i> STAY CURIOUS</div>
+          <h2 class="reveal" style="--d:.06s">Good questions lead<br>to <em>great discoveries.</em></h2>
+          <p class="reveal" style="--d:.12s">Our reading collection is growing. Explore our first two titles.</p>
+        </div>
+        <a class="btn btn-outline reveal" style="--d:.18s" href="#books"><span>Browse the collection</span><i class="arrow">↗</i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="THE CURIOUS MIND — back to top">
+            <span class="brand-mark" aria-hidden="true"><i></i></span>
+            <span class="brand-name">THE CURIOUS MIND</span>
+          </a>
+          <p>Discover more. Think differently.</p>
+        </div>
+        <div class="footer-links">
+          <div><b>EXPLORE</b><a href="#books">All books</a><a href="#about">Our story</a></div>
+          <div><b>INFORMATION</b><a href="mailto:hello@thecuriousmind.example">Contact</a><a href="#">Privacy policy</a><a href="#">Terms &amp; conditions</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 THE CURIOUS MIND. All rights reserved.</span><span>MADE FOR THE CURIOUS.</span></div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" inert>
+    <div class="drawer-head">
+      <div>
+        <div class="eyebrow"><i></i> YOUR SELECTION</div>
+        <h2 id="cartTitle">Your cart <small id="drawerCount">(0)</small></h2>
+      </div>
+      <button class="close-btn" id="closeCart" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-bottom" id="cartBottom" hidden>
+      <p>Checkout will be enabled after prices and secure payment are configured.</p>
+      <button class="disabled-btn" type="button" disabled aria-disabled="true">Checkout — coming soon</button>
+    </div>
+  </aside>
+
+  <!-- BOOK DETAIL -->
+  <div class="sheet-wrap" id="bookModal" aria-hidden="true" inert>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" tabindex="-1">
+      <button class="close-btn sheet-x" id="closeModal" type="button" aria-label="Close book details">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/cover.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
