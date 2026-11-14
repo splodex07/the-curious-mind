@@ -11,7 +11,6 @@
 
   T.fx.observe();
   T.fx.bindTilt();
-  T.fx.bindSpotlight();
 
   /* Search icon in header: jump to the collection and focus the field */
   T.$("#searchJump").addEventListener("click", () => {

@@ -1,80 +1,95 @@
-/* Visual polish: scroll reveal, header state, progress bar,
-   cover tilt, card spotlight and hero parallax.
-   Everything respects prefers-reduced-motion. */
+/* Performance-conscious visual polish.
+   Scroll reveal remains; pointer effects are throttled to animation frames. */
 (function () {
   const T = window.TCM;
   const fx = (T.fx = {});
 
-  /* ---- Scroll reveal ---------------------------------------------------- */
+  /* Scroll reveal: observe once, then unobserve revealed elements. */
   let io = null;
   if ("IntersectionObserver" in window && !T.reducedMotion) {
-    io = new IntersectionObserver(
-      (entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }),
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
-    );
+    io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in");
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px 4% 0px" });
   }
+
   fx.observe = function (root = document) {
-    T.$$(".reveal:not(.in)", root).forEach((el) => (io ? io.observe(el) : el.classList.add("in")));
+    T.$$(".reveal:not(.in)", root).forEach((el) => {
+      if (io) io.observe(el);
+      else el.classList.add("in");
+    });
   };
 
-  /* ---- Tilt (covers) + spotlight (cards) ---------------------------------- */
+  /* Cover tilt: cache element bounds and update at most once per frame. */
   fx.bindTilt = function (root = document) {
     if (!T.canHover || T.reducedMotion) return;
+
     T.$$(".tilt", root).forEach((el) => {
-      if (el._tilt) return;
-      el._tilt = true;
+      if (el._tiltBound) return;
+      el._tiltBound = true;
+
       const host = el.closest(".card-cover, .stage-book, .sheet-stage") || el;
-      host.addEventListener("pointermove", (e) => {
-        const r = host.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.setProperty("--ry", (x * 14).toFixed(2) + "deg");
-        el.style.setProperty("--rx", (-y * 12).toFixed(2) + "deg");
-      });
-      host.addEventListener("pointerleave", () => { el.style.setProperty("--ry", "0deg"); el.style.setProperty("--rx", "0deg"); });
+      let bounds = null;
+      let frame = 0;
+      let latestX = 0;
+      let latestY = 0;
+
+      host.addEventListener("pointerenter", () => {
+        bounds = host.getBoundingClientRect();
+      }, { passive: true });
+
+      host.addEventListener("pointermove", (event) => {
+        if (!bounds || frame) return;
+        latestX = event.clientX;
+        latestY = event.clientY;
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          const x = (latestX - bounds.left) / Math.max(bounds.width, 1) - 0.5;
+          const y = (latestY - bounds.top) / Math.max(bounds.height, 1) - 0.5;
+          el.style.setProperty("--ry", (x * 10).toFixed(2) + "deg");
+          el.style.setProperty("--rx", (-y * 8).toFixed(2) + "deg");
+        });
+      }, { passive: true });
+
+      host.addEventListener("pointerleave", () => {
+        bounds = null;
+        if (frame) cancelAnimationFrame(frame);
+        frame = 0;
+        el.style.setProperty("--ry", "0deg");
+        el.style.setProperty("--rx", "0deg");
+      }, { passive: true });
     });
   };
 
-  fx.bindSpotlight = function (root = document) {
-    if (!T.canHover || T.reducedMotion) return;
-    T.$$(".book-card", root).forEach((card) => {
-      if (card._spot) return;
-      card._spot = true;
-      card.addEventListener("pointermove", (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", e.clientX - r.left + "px");
-        card.style.setProperty("--my", e.clientY - r.top + "px");
-      });
-    });
-  };
-
-  /* ---- Header + progress -------------------------------------------------- */
+  /* Scroll work is coalesced into one animation frame. */
   const header = T.$("#header");
   const progress = T.$("#progress");
   let ticking = false;
+
   function onScroll() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
-      const y = window.scrollY;
+      const y = window.scrollY || window.pageYOffset;
       header.classList.toggle("scrolled", y > 24);
+
       const max = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
+      const ratio = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
+      progress.style.transform = `scaleX(${ratio})`;
       ticking = false;
     });
   }
+
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    ticking = false;
+    onScroll();
+  }, { passive: true });
   onScroll();
 
-  /* ---- Hero parallax ------------------------------------------------------- */
-  const stage = T.$("#heroStage");
-  if (stage && T.canHover && !T.reducedMotion) {
-    const hero = stage.closest(".hero");
-    hero.addEventListener("pointermove", (e) => {
-      const r = hero.getBoundingClientRect();
-      stage.style.setProperty("--px", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
-      stage.style.setProperty("--py", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
-    });
-    hero.addEventListener("pointerleave", () => { stage.style.setProperty("--px", 0); stage.style.setProperty("--py", 0); });
-  }
+  /* Spotlight and hero parallax were removed: they caused continuous
+     pointer-driven style updates without adding essential functionality. */
 })();
