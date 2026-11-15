@@ -55,3 +55,11 @@ Edit `js/data.js`. Each entry controls its card, hero cover, detail view and car
 - Final cover artwork and prices (above).
 - Real payment: integrate a verified provider (e.g. a hosted checkout) and only then enable the checkout button in `js/cart.js` / `index.html`.
 - Fonts (Fraunces + Inter) load from Google Fonts. Self-host them if you need offline use or stricter privacy.
+
+## Store content updates (15 Nov 2026)
+- Catalogue prices are configured in INR: Body eBook ₹99 and Brain eBook ₹199.
+- Original cover artwork is used from `assets/covers/` across catalogue cards, hero, details and cart.
+- Book descriptions have been expanded for the detail view and catalogue.
+- Our Story has been expanded; FAQ, Contact, Privacy Policy and Terms & Conditions sections have been added.
+- Contact email and Instagram are intentionally placeholders until the store owner supplies the official details.
+- Checkout remains disabled until a verified payment provider and secure order-delivery flow are connected. Policy text is a draft and should be reviewed against the final services before paid launch.

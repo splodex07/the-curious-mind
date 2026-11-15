@@ -144,3 +144,8 @@
     background: rgba(10, 11, 14, 0.96);
   }
 }
+@media (max-width: 700px) {
+  .contact-grid, .policy-grid { grid-template-columns: 1fr; gap: 34px; }
+  .faq-list summary { font-size: 14px; }
+  .faq-list details p { font-size: 13px; }
+}

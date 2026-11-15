@@ -39,7 +39,8 @@
       <nav class="nav" id="nav" aria-label="Main">
         <a href="#books">Books</a>
         <a href="#about">Our Story</a>
-        <a href="#footer">Contact</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -141,8 +142,44 @@
         <span class="quote-mark" aria-hidden="true">“</span>
         <div class="eyebrow reveal"><i></i> WHY WE EXIST</div>
         <h2 class="reveal" style="--d:.06s">The world is full of things<br>you haven't <em>noticed yet.</em></h2>
-        <p class="reveal" style="--d:.12s">We create accessible digital reads around fascinating questions, overlooked details and ideas worth thinking about. Because curiosity can turn an ordinary moment into a discovery.</p>
-        <a class="link-arrow reveal" style="--d:.18s" href="#books">Find your next discovery <i>→</i></a>
+        <p class="reveal" style="--d:.12s">The Curious Mind began with a simple belief: learning should make you feel more curious, not overwhelmed. There are remarkable ideas hidden in ordinary life—in the body that carries you through every day, in the mind that interprets the world, and in the small details most people pass without a second thought.</p>
+        <p class="reveal" style="--d:.16s">We create digital books that turn those questions into engaging reading experiences. Each title is built around a clear theme, thoughtful explanations and discoveries designed to make readers pause, connect ideas and look again. Our aim is not to make knowledge complicated; it is to make fascinating subjects approachable, memorable and worth exploring.</p>
+        <p class="reveal" style="--d:.20s">We are an evolving independent project, and this collection is only the beginning. As the library grows, we hope to explore more of science, psychology, everyday life and the unexpected questions that make the world interesting.</p>
+        <a class="link-arrow reveal" style="--d:.24s" href="#books">Find your next discovery <i>→</i></a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section info-section" id="faq">
+      <div class="container">
+        <header class="section-head"><div><div class="eyebrow"><i></i> GOOD TO KNOW</div><h2>Frequently asked <em>questions.</em></h2><p class="section-sub">A few helpful answers before you choose your next read.</p></div></header>
+        <div class="faq-list">
+          <details><summary>What will I receive after purchasing a book?<span>＋</span></summary><p>Each title is a digital eBook in PDF format. Once secure online checkout and payment verification are enabled, the download instructions will be shown after a successful order.</p></details>
+          <details><summary>Can I read the books on my phone or computer?<span>＋</span></summary><p>Yes. PDF eBooks can generally be opened on phones, tablets and computers using a PDF reader.</p></details>
+          <details><summary>Are these printed books?<span>＋</span></summary><p>No. The titles currently listed in this collection are digital eBooks, not physical printed copies.</p></details>
+          <details><summary>Can I get a refund?<span>＋</span></summary><p>Because digital files can be accessed and copied, refund eligibility will be explained in the final digital-products policy before checkout is enabled. If you have an order issue, contact us with your order details.</p></details>
+          <details><summary>How can I contact The Curious Mind?<span>＋</span></summary><p>Use the contact details in the Contact section. The email address and Instagram profile will be added once provided by the store owner.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section info-section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div><div class="eyebrow"><i></i> WE'D LOVE TO HEAR FROM YOU</div><h2>Let's <em>connect.</em></h2><p class="section-sub">Questions about a book, an order, or the ideas behind the collection? Reach out and we’ll make sure your message has a place to go.</p></div>
+        <div class="contact-methods">
+          <div class="contact-method"><span class="contact-icon">✉</span><div><small>EMAIL</small><strong id="contactEmail">Email address to be added</strong><p>For questions, support and feedback</p></div></div>
+          <div class="contact-method"><span class="contact-icon">◎</span><div><small>INSTAGRAM</small><strong id="contactInstagram">Instagram profile to be added</strong><p>Follow the project and see what's new</p></div></div>
+          <p class="contact-note">Contact links will be activated when the official email address and Instagram profile are provided.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICIES -->
+    <section class="section info-section policy-section" id="policies">
+      <div class="container policy-grid">
+        <article id="privacy"><div class="eyebrow"><i></i> YOUR INFORMATION</div><h2>Privacy <em>policy.</em></h2><p>We aim to collect only the information needed to operate the store and respond to customer enquiries. If checkout is introduced, the payment provider may process payment details under its own privacy and security terms. The Curious Mind should not receive or store full card, UPI PIN or banking credentials.</p><p>Any contact or order information submitted through the website should be used only for customer support, order fulfilment and essential service communication. This policy must be reviewed and updated to match the final hosting, analytics and payment services before launch.</p></article>
+        <article id="terms"><div class="eyebrow"><i></i> USING THIS STORE</div><h2>Terms &amp; <em>conditions.</em></h2><p>Books listed here are digital products for personal reading. Unless expressly permitted, purchased files must not be resold, redistributed, publicly uploaded or shared as a substitute for a purchase.</p><p>Product descriptions, prices and availability are shown on the store. An order should be considered confirmed only after the payment provider and store system verify the correct payment. These draft terms should be reviewed and finalised before paid checkout is activated.</p></article>
       </div>
     </section>
 
@@ -170,8 +207,8 @@
           <p>Discover more. Think differently.</p>
         </div>
         <div class="footer-links">
-          <div><b>EXPLORE</b><a href="#books">All books</a><a href="#about">Our story</a></div>
-          <div><b>INFORMATION</b><a href="mailto:hello@thecuriousmind.example">Contact</a><a href="#">Privacy policy</a><a href="#">Terms &amp; conditions</a></div>
+          <div><b>EXPLORE</b><a href="#books">All books</a><a href="#about">Our story</a><a href="#faq">FAQ</a></div>
+          <div><b>INFORMATION</b><a href="#contact">Contact</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms &amp; conditions</a></div>
         </div>
       </div>
       <div class="footer-bottom"><span>© 2026 THE CURIOUS MIND. All rights reserved.</span><span>MADE FOR THE CURIOUS.</span></div>
@@ -190,7 +227,8 @@
     </div>
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-bottom" id="cartBottom" hidden>
-      <p>Checkout will be enabled after prices and secure payment are configured.</p>
+      <div class="cart-total-row"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div>
+      <p>Secure checkout is being prepared. Payment and automatic downloads will be enabled only after verified payment processing is connected.</p>
       <button class="disabled-btn" type="button" disabled aria-disabled="true">Checkout — coming soon</button>
     </div>
   </aside>

@@ -128,3 +128,33 @@
 .footer-links a { color: var(--muted); font-size: 14px; transition: color 0.25s, transform 0.25s var(--ease); }
 .footer-links a:hover { color: var(--text); transform: translateX(4px); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--faint); font-size: 11px; letter-spacing: 0.12em; }
+
+/* Additional trust, support and information sections */
+.info-section { background: var(--bg); border-top: 1px solid var(--line); }
+.info-section .section-head { margin-bottom: 34px; }
+.faq-list { max-width: 900px; border-top: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid var(--line); padding: 0; }
+.faq-list summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 4px; color: var(--text); font-size: 16px; cursor: pointer; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary span { color: var(--gold); font-size: 22px; transition: transform .2s; }
+.faq-list details[open] summary span { transform: rotate(45deg); }
+.faq-list details p { max-width: 760px; padding: 0 42px 22px 4px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.contact-section { background: var(--bg-2); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 8vw, 110px); align-items: start; }
+.contact-grid h2, .policy-grid h2 { margin: 20px 0 16px; font-size: clamp(38px, 5vw, 64px); line-height: 1.05; font-weight: 350; letter-spacing: -.03em; }
+.contact-grid h2 em, .policy-grid h2 em { color: var(--blue-2); font-weight: 300; }
+.contact-grid .section-sub { max-width: 480px; line-height: 1.9; }
+.contact-methods { border-top: 1px solid var(--line); }
+.contact-method { display: flex; gap: 18px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.contact-icon { flex: 0 0 42px; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line-2); border-radius: 50%; color: var(--gold); font-size: 20px; }
+.contact-method small { display: block; margin-bottom: 7px; color: var(--gold); font-size: 10px; letter-spacing: .18em; }
+.contact-method strong { color: var(--text); font-size: 15px; font-weight: 600; }
+.contact-method p, .contact-note { margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.contact-note { padding: 14px 0; }
+.policy-section { background: #090a0d; }
+.policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 8vw, 100px); }
+.policy-grid article { scroll-margin-top: 100px; }
+.policy-grid h2 { font-size: clamp(32px, 4vw, 48px); }
+.policy-grid p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+.cart-total-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0 10px; color: var(--muted); font-size: 13px; }
+.cart-total-row strong { color: var(--text); font-size: 18px; }

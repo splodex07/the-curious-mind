@@ -11,8 +11,8 @@
   T.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   T.canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-  /* Prices are placeholders until a real price is set in data.js */
-  T.priceText = (book, long) => (book.price == null ? (long ? "To be announced" : "Price coming soon") : String(book.price));
+  /* All catalogue prices are in Indian rupees. */
+  T.priceText = (book, long) => (book.price == null ? (long ? "To be announced" : "Price coming soon") : `₹${Number(book.price).toLocaleString("en-IN")}`);
 
   /* ---- Layers ---------------------------------------------------------- */
   const stack = [];
