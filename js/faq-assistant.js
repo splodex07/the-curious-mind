@@ -1,4 +1,4 @@
-/* A lightweight instant-answer helper based on the store's published information.
+/* An immediate, synchronous answer helper based on the store's published information.
    It does not call a remote AI model; connect a secure AI backend for open-ended AI chat. */
 (() => {
   const form = document.getElementById('agentForm');
@@ -47,9 +47,20 @@
     const q = question.toLowerCase();
     const match = answers.find(item => item.keys.some(key => q.includes(key)));
     const reply = match ? (typeof match.reply === 'function' ? match.reply() : match.reply)
-      : 'I can answer common questions about our books, prices, PDF format, delivery and checkout. For a question outside those topics, please use the Contact section. This instant helper currently uses prepared store information.';
-    add(reply, 'bot');
+      : 'I can answer common questions about our books, prices, PDF format, delivery and checkout. For a question outside those topics, please use the Contact section. This quick-help assistant uses prepared store information.';
     input.value = '';
     input.focus();
+
+    // A brief typing pause makes the exchange feel natural without slowing it down noticeably.
+    const typing = document.createElement('div');
+    typing.className = 'agent-typing';
+    typing.textContent = 'Curious Assistant is typing…';
+    typing.setAttribute('aria-label', 'Assistant is typing');
+    messages.appendChild(typing);
+    messages.scrollTop = messages.scrollHeight;
+    window.setTimeout(() => {
+      typing.remove();
+      add(reply, 'bot');
+    }, 1100);
   });
 })();
