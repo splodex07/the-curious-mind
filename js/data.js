@@ -47,5 +47,24 @@ TCM.catalog = [
     ],
     price: 199,
     coverImage: "assets/covers/your-brain.jpg"
+  },
+  {
+    id: "noticing",
+    index: "03",
+    filter: "curiosity",
+    theme: "gold",
+    category: "ATTENTION, PERCEPTION & CURIOSITY",
+    title: "The Art of Noticing",
+    titleLines: ["THE ART OF", "NOTICING"],
+    accentLine: 1,
+    teaser: "Discover the extraordinary details hidden in ordinary life—and learn to look at familiar things with fresh curiosity.",
+    description: "The world has not run out of details. Our attention simply learns to move quickly past what feels familiar. The Art of Noticing explores how perception, expectation and memory shape what reaches our awareness—and why meaningful details can disappear in plain sight. Across five connected chapters, it moves from the limits of what we think we see, to overlooked details, the meeting of our senses, the pull of curiosity and awe, and practical ways to observe more deliberately. With thoughtful explanations and gentle observation exercises, this book invites you to slow down, ask better questions and rediscover the richness already present in everyday life.",
+    bullets: [
+      "Understand how attention and expectation shape what you notice",
+      "Explore the overlooked details, senses, curiosity and awe in daily life",
+      "Use practical observation ideas to look again without turning life into a test"
+    ],
+    price: 250,
+    coverImage: "assets/covers/art-of-noticing.jpg"
   }
 ];

@@ -4,7 +4,7 @@
   const T = window.TCM;
   const pad = (n) => String(n).padStart(2, "0");
   const grid = T.$("#bookGrid");
-  const state = { filter: "all", query: "" };
+  const state = { filter: "all", query: "", expanded: false };
 
   function cardHTML(b, i) {
     return `<article class="book-card reveal" data-id="${b.id}" data-category="${b.filter}" style="--d:${(i * 0.1).toFixed(2)}s">
@@ -32,6 +32,7 @@
     grid.innerHTML = T.catalog.map(cardHTML).join("");
     T.fx && T.fx.observe(grid);
     syncAddButtons();
+    applyFilters();
   }
 
   function renderHero() {
@@ -58,16 +59,27 @@
   }
 
   function applyFilters() {
+    const matching = T.catalog.filter(matches);
+    const shouldExpand = state.expanded || !!state.query.trim() || state.filter !== "all";
+    const visibleIds = new Set((shouldExpand ? matching : matching.slice(0, 2)).map((b) => b.id));
     let shown = 0;
     T.$$(".book-card", grid).forEach((card) => {
-      const ok = matches(T.byId(card.dataset.id));
+      const ok = visibleIds.has(card.dataset.id);
       const wasHidden = card.hidden;
       card.hidden = !ok;
       if (ok) { shown++; if (wasHidden) { card.classList.remove("pop"); void card.offsetWidth; card.classList.add("pop"); } }
     });
     grid.classList.toggle("single", shown === 1);
-    T.$("#noResults").hidden = shown !== 0;
-    T.$("#resultLine").textContent = `Showing ${shown} of ${T.catalog.length} ${T.catalog.length === 1 ? "book" : "books"}`;
+    T.$("#noResults").hidden = matching.length !== 0;
+    T.$("#resultLine").textContent = `Showing ${shown} of ${matching.length} matching ${matching.length === 1 ? "book" : "books"}`;
+    const moreWrap = T.$("#collectionMoreWrap");
+    const moreButton = T.$("#collectionMore");
+    const canToggle = state.filter === "all" && !state.query.trim() && matching.length > 2;
+    moreWrap.hidden = !canToggle;
+    if (canToggle) {
+      moreButton.setAttribute("aria-expanded", String(state.expanded));
+      moreButton.innerHTML = state.expanded ? 'Show less <span aria-hidden="true">↑</span>' : 'More books <span aria-hidden="true">↓</span>';
+    }
   }
 
   function syncAddButtons() {
@@ -87,10 +99,16 @@
       btn.classList.add("active");
       btn.setAttribute("aria-pressed", "true");
       state.filter = btn.dataset.filter || "all";
+      state.expanded = false;
       applyFilters();
     })
   );
   T.$("#searchInput").addEventListener("input", (e) => { state.query = e.target.value; applyFilters(); });
+  T.$("#collectionMore").addEventListener("click", () => {
+    state.expanded = !state.expanded;
+    applyFilters();
+    if (!state.expanded) T.$("#books").scrollIntoView({ behavior: T.reducedMotion ? "auto" : "smooth", block: "start" });
+  });
 
   /* Delegated open / add handlers (grid + hero) */
   document.addEventListener("click", (e) => {

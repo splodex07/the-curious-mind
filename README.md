@@ -63,3 +63,8 @@ Edit `js/data.js`. Each entry controls its card, hero cover, detail view and car
 - Our Story has been expanded; FAQ, Contact, Privacy Policy and Terms & Conditions sections have been added.
 - Contact email and Instagram are intentionally placeholders until the store owner supplies the official details.
 - Checkout remains disabled until a verified payment provider and secure order-delivery flow are connected. Policy text is a draft and should be reviewed against the final services before paid launch.
+
+
+## Collection update
+- Added *The Art of Noticing* at ₹250, using the supplied PDF cover artwork.
+- The collection initially shows two books; **More books** reveals additional titles, and **Show less** collapses them. Category filters and search reveal matching books directly.

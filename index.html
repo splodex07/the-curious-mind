@@ -41,6 +41,8 @@
         <a href="#about">Our Story</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
       </nav>
 
       <div class="header-actions">
@@ -121,6 +123,7 @@
             <button class="filter active" type="button" data-filter="all" aria-pressed="true">All books <sup data-count="all">02</sup></button>
             <button class="filter" type="button" data-filter="science" aria-pressed="false">Science &amp; body <sup data-count="science">01</sup></button>
             <button class="filter" type="button" data-filter="psychology" aria-pressed="false">Psychology <sup data-count="psychology">01</sup></button>
+            <button class="filter" type="button" data-filter="curiosity" aria-pressed="false">Curiosity <sup data-count="curiosity">01</sup></button>
           </div>
           <label class="search">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
@@ -130,6 +133,9 @@
         <p class="result-line" id="resultLine" aria-live="polite"></p>
 
         <div class="book-grid" id="bookGrid"></div>
+        <div class="collection-more-wrap" id="collectionMoreWrap" hidden>
+          <button class="collection-more" id="collectionMore" type="button" aria-expanded="false">More books <span aria-hidden="true">↓</span></button>
+        </div>
         <p class="no-results" id="noResults" hidden>No books match your search. Try another title.</p>
         <noscript><p class="no-results">Please enable JavaScript to browse the collection.</p></noscript>
       </div>
@@ -153,12 +159,23 @@
     <section class="section info-section" id="faq">
       <div class="container">
         <header class="section-head"><div><div class="eyebrow"><i></i> GOOD TO KNOW</div><h2>Frequently asked <em>questions.</em></h2><p class="section-sub">A few helpful answers before you choose your next read.</p></div></header>
-        <div class="faq-list">
-          <details><summary>What will I receive after purchasing a book?<span>＋</span></summary><p>Each title is a digital eBook in PDF format. Once secure online checkout and payment verification are enabled, the download instructions will be shown after a successful order.</p></details>
-          <details><summary>Can I read the books on my phone or computer?<span>＋</span></summary><p>Yes. PDF eBooks can generally be opened on phones, tablets and computers using a PDF reader.</p></details>
-          <details><summary>Are these printed books?<span>＋</span></summary><p>No. The titles currently listed in this collection are digital eBooks, not physical printed copies.</p></details>
-          <details><summary>Can I get a refund?<span>＋</span></summary><p>Because digital files can be accessed and copied, refund eligibility will be explained in the final digital-products policy before checkout is enabled. If you have an order issue, contact us with your order details.</p></details>
-          <details><summary>How can I contact The Curious Mind?<span>＋</span></summary><p>Use the contact details in the Contact section. The email address and Instagram profile will be added once provided by the store owner.</p></details>
+        <div class="faq-layout">
+          <div class="faq-list">
+            <details><summary>What will I receive after purchasing a book?<span>＋</span></summary><p>Each title is a digital eBook in PDF format. Once secure online checkout and payment verification are enabled, the download instructions will be shown after a successful order.</p></details>
+            <details><summary>Can I read the books on my phone or computer?<span>＋</span></summary><p>Yes. PDF eBooks can generally be opened on phones, tablets and computers using a PDF reader.</p></details>
+            <details><summary>Are these printed books?<span>＋</span></summary><p>No. The titles currently listed in this collection are digital eBooks, not physical printed copies.</p></details>
+            <details><summary>Can I get a refund?<span>＋</span></summary><p>Because digital files can be accessed and copied, refund eligibility will be explained in the final digital-products policy before checkout is enabled. If you have an order issue, contact us with your order details.</p></details>
+            <div class="faq-last-row">
+              <details><summary>How can I contact The Curious Mind?<span>＋</span></summary><p>Use the email or Instagram details in the Contact section. Official links will be activated once supplied by the store owner.</p></details>
+              <aside class="help-agent" aria-label="Instant help assistant">
+                <div class="agent-top"><span class="agent-avatar">✦</span><div><strong>Curious Help Assistant</strong><small><i></i> Instant store help</small></div><span class="agent-tag">BETA</span></div>
+                <p class="agent-intro">Have a question? Ask about our books, formats, pricing or orders.</p>
+                <div class="agent-messages" id="agentMessages" aria-live="polite"><div class="agent-bubble agent-bot">Hi! I can help with common questions about The Curious Mind and our eBooks. What would you like to know?</div></div>
+                <form class="agent-form" id="agentForm"><input id="agentInput" type="text" maxlength="240" placeholder="Type your question…" aria-label="Ask the help assistant" required><button type="submit" aria-label="Send question">➤</button></form>
+                <small class="agent-disclaimer">Instant answers use the store's current information. For anything unusual, please contact support.</small>
+              </aside>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -175,21 +192,13 @@
       </div>
     </section>
 
-    <!-- POLICIES -->
-    <section class="section info-section policy-section" id="policies">
-      <div class="container policy-grid">
-        <article id="privacy"><div class="eyebrow"><i></i> YOUR INFORMATION</div><h2>Privacy <em>policy.</em></h2><p>We aim to collect only the information needed to operate the store and respond to customer enquiries. If checkout is introduced, the payment provider may process payment details under its own privacy and security terms. The Curious Mind should not receive or store full card, UPI PIN or banking credentials.</p><p>Any contact or order information submitted through the website should be used only for customer support, order fulfilment and essential service communication. This policy must be reviewed and updated to match the final hosting, analytics and payment services before launch.</p></article>
-        <article id="terms"><div class="eyebrow"><i></i> USING THIS STORE</div><h2>Terms &amp; <em>conditions.</em></h2><p>Books listed here are digital products for personal reading. Unless expressly permitted, purchased files must not be resold, redistributed, publicly uploaded or shared as a substitute for a purchase.</p><p>Product descriptions, prices and availability are shown on the store. An order should be considered confirmed only after the payment provider and store system verify the correct payment. These draft terms should be reviewed and finalised before paid checkout is activated.</p></article>
-      </div>
-    </section>
-
     <!-- CLOSING -->
     <section class="closing">
       <div class="container closing-inner">
         <div>
           <div class="eyebrow reveal"><i></i> STAY CURIOUS</div>
           <h2 class="reveal" style="--d:.06s">Good questions lead<br>to <em>great discoveries.</em></h2>
-          <p class="reveal" style="--d:.12s">Our reading collection is growing. Explore our first two titles.</p>
+          <p class="reveal" style="--d:.12s">Our reading collection is growing. Explore the books in our collection.</p>
         </div>
         <a class="btn btn-outline reveal" style="--d:.18s" href="#books"><span>Browse the collection</span><i class="arrow">↗</i></a>
       </div>
@@ -208,7 +217,7 @@
         </div>
         <div class="footer-links">
           <div><b>EXPLORE</b><a href="#books">All books</a><a href="#about">Our story</a><a href="#faq">FAQ</a></div>
-          <div><b>INFORMATION</b><a href="#contact">Contact</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms &amp; conditions</a></div>
+          <div><b>INFORMATION</b><a href="#contact">Contact</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms &amp; conditions</a></div>
         </div>
       </div>
       <div class="footer-bottom"><span>© 2026 THE CURIOUS MIND. All rights reserved.</span><span>MADE FOR THE CURIOUS.</span></div>
@@ -249,5 +258,6 @@
   <script src="js/detail.js"></script>
   <script src="js/effects.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/faq-assistant.js"></script>
 </body>
 </html>
