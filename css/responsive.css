@@ -59,6 +59,7 @@
   .card-foot { flex-direction: column; align-items: stretch; }
   .card-actions { justify-content: space-between; }
   .add-btn { flex: 1; }
+  .read-btn { flex: 0 0 auto; }
 
   .cart-drawer { padding: 22px; }
   .sheet-wrap { padding: 0; }

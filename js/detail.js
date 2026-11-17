@@ -28,6 +28,7 @@
             <div><dt>Price</dt><dd>${T.esc(T.priceText(b, true))}</dd></div>
           </dl>
           <div class="sheet-actions">
+            <a class="btn btn-outline" href="${T.esc(b.pdfUrl)}" target="_blank" rel="noopener">Read book <i class="arrow">↗</i></a>
             <button class="btn btn-primary" type="button" id="addBook"><span>Add to cart</span><i class="arrow">↗</i></button>
             <button class="link-arrow" type="button" id="backToList">Back to collection <i>→</i></button>
           </div>

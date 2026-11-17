@@ -74,6 +74,8 @@
 .card-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
 .price { color: var(--text); font-size: 13px; font-weight: 500; }
 .card-actions { display: flex; align-items: center; gap: 10px; }
+.read-btn { display: inline-flex; align-items: center; justify-content: center; height: 42px; padding: 0 17px; border: 1px solid var(--gold-dim); border-radius: 999px; color: var(--gold-2); font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.3s, color 0.3s, transform 0.3s var(--ease); white-space: nowrap; }
+.read-btn:hover { background: rgba(201, 164, 92, 0.14); color: #fff; transform: translateY(-2px); }
 .add-btn { height: 42px; padding: 0 20px; border: 1px solid var(--blue); border-radius: 999px; background: rgba(47, 107, 255, 0.14); color: var(--blue-3); font-size: 13px; font-weight: 600; transition: background 0.3s, color 0.3s, transform 0.3s var(--ease); }
 .add-btn:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
 .add-btn.in-cart { border-color: var(--gold-dim); background: rgba(201, 164, 92, 0.1); color: var(--gold-2); }

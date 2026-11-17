@@ -27,7 +27,8 @@ TCM.catalog = [
       "For curious readers who want to understand how the body works"
     ],
     price: 99,
-    coverImage: "assets/covers/your-body.jpg"
+    coverImage: "assets/covers/your-body.jpg",
+    pdfUrl: "assets/books/your-body-is-hiding-100-amazing-secrets.pdf"
   },
   {
     id: "brain",
@@ -46,7 +47,8 @@ TCM.catalog = [
       "Question what you think you know about your own mind"
     ],
     price: 199,
-    coverImage: "assets/covers/your-brain.jpg"
+    coverImage: "assets/covers/your-brain.jpg",
+    pdfUrl: "assets/books/your-brain-is-playing-tricks-on-you.pdf"
   },
   {
     id: "noticing",
@@ -65,6 +67,7 @@ TCM.catalog = [
       "Use practical observation ideas to look again without turning life into a test"
     ],
     price: 250,
-    coverImage: "assets/covers/art-of-noticing.jpg"
+    coverImage: "assets/covers/art-of-noticing.jpg",
+    pdfUrl: "assets/books/the-art-of-noticing.pdf"
   }
 ];

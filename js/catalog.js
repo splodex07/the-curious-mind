@@ -20,6 +20,7 @@
         <div class="card-foot">
           <span class="price">${T.esc(T.priceText(b))}</span>
           <div class="card-actions">
+            <a class="read-btn" href="${T.esc(b.pdfUrl)}" target="_blank" rel="noopener">Read</a>
             <button class="add-btn" type="button" data-add="${b.id}">Add to cart</button>
             <button class="arrow-btn" type="button" data-open="${b.id}" aria-label="View details: ${T.esc(b.title)}">↗</button>
           </div>
